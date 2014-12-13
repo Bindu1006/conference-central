@@ -1,0 +1,483 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://record-plus.appspot.com/_ah/api",
+  "name" : "conference",
+  "version" : "v1",
+  "description" : "Conference Central API for creating and querying conferences, and for creating and getting user Profiles",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "https://record-plus.appspot.com/_ah/spi",
+    "deadline" : 65.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "methods" : {
+    "conference.queryConferences" : {
+      "path" : "queryConferences",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/plus.login" ],
+      "audiences" : [ "452065867342-93qlftq8a65dcmp48hrsuo7un6btddvf.apps.googleusercontent.com" ],
+      "clientIds" : [ "452065867342-93qlftq8a65dcmp48hrsuo7un6btddvf.apps.googleusercontent.com", "replace this with your Android client ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.google.devrel.training.conference.spi.ConferenceApi.queryConferences",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "conference.createConference" : {
+      "path" : "conference",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/plus.login" ],
+      "audiences" : [ "452065867342-93qlftq8a65dcmp48hrsuo7un6btddvf.apps.googleusercontent.com" ],
+      "clientIds" : [ "452065867342-93qlftq8a65dcmp48hrsuo7un6btddvf.apps.googleusercontent.com", "replace this with your Android client ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.google.devrel.training.conference.spi.ConferenceApi.createConference",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "conference.unregisterFromConference" : {
+      "path" : "conference/{websafeConferenceKey}/registration",
+      "httpMethod" : "DELETE",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/plus.login" ],
+      "audiences" : [ "452065867342-93qlftq8a65dcmp48hrsuo7un6btddvf.apps.googleusercontent.com" ],
+      "clientIds" : [ "452065867342-93qlftq8a65dcmp48hrsuo7un6btddvf.apps.googleusercontent.com", "replace this with your Android client ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.google.devrel.training.conference.spi.ConferenceApi.unregisterFromConference",
+      "request" : {
+        "parameters" : {
+          "websafeConferenceKey" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "conference.getAnnouncement" : {
+      "path" : "announcement",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/plus.login" ],
+      "audiences" : [ "452065867342-93qlftq8a65dcmp48hrsuo7un6btddvf.apps.googleusercontent.com" ],
+      "clientIds" : [ "452065867342-93qlftq8a65dcmp48hrsuo7un6btddvf.apps.googleusercontent.com", "replace this with your Android client ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.google.devrel.training.conference.spi.ConferenceApi.getAnnouncement",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "conference.getConferencesCreated" : {
+      "path" : "getConferencesCreated",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/plus.login" ],
+      "audiences" : [ "452065867342-93qlftq8a65dcmp48hrsuo7un6btddvf.apps.googleusercontent.com" ],
+      "clientIds" : [ "452065867342-93qlftq8a65dcmp48hrsuo7un6btddvf.apps.googleusercontent.com", "replace this with your Android client ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.google.devrel.training.conference.spi.ConferenceApi.getConferencesCreated",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "conference.registerForConference" : {
+      "path" : "conference/{websafeConferenceKey}/registration",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/plus.login" ],
+      "audiences" : [ "452065867342-93qlftq8a65dcmp48hrsuo7un6btddvf.apps.googleusercontent.com" ],
+      "clientIds" : [ "452065867342-93qlftq8a65dcmp48hrsuo7un6btddvf.apps.googleusercontent.com", "replace this with your Android client ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.google.devrel.training.conference.spi.ConferenceApi.registerForConference",
+      "request" : {
+        "parameters" : {
+          "websafeConferenceKey" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "conference.getProfile" : {
+      "path" : "profile",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/plus.login" ],
+      "audiences" : [ "452065867342-93qlftq8a65dcmp48hrsuo7un6btddvf.apps.googleusercontent.com" ],
+      "clientIds" : [ "452065867342-93qlftq8a65dcmp48hrsuo7un6btddvf.apps.googleusercontent.com", "replace this with your Android client ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.google.devrel.training.conference.spi.ConferenceApi.getProfile",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "conference.saveProfile" : {
+      "path" : "profile",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/plus.login" ],
+      "audiences" : [ "452065867342-93qlftq8a65dcmp48hrsuo7un6btddvf.apps.googleusercontent.com" ],
+      "clientIds" : [ "452065867342-93qlftq8a65dcmp48hrsuo7un6btddvf.apps.googleusercontent.com", "replace this with your Android client ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.google.devrel.training.conference.spi.ConferenceApi.saveProfile",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "conference.getConferencesToAttend" : {
+      "path" : "getConferencesToAttend",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/plus.login" ],
+      "audiences" : [ "452065867342-93qlftq8a65dcmp48hrsuo7un6btddvf.apps.googleusercontent.com" ],
+      "clientIds" : [ "452065867342-93qlftq8a65dcmp48hrsuo7un6btddvf.apps.googleusercontent.com", "replace this with your Android client ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.google.devrel.training.conference.spi.ConferenceApi.getConferencesToAttend",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "conference.getConference" : {
+      "path" : "conference/{websafeConferenceKey}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/plus.login" ],
+      "audiences" : [ "452065867342-93qlftq8a65dcmp48hrsuo7un6btddvf.apps.googleusercontent.com" ],
+      "clientIds" : [ "452065867342-93qlftq8a65dcmp48hrsuo7un6btddvf.apps.googleusercontent.com", "replace this with your Android client ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.google.devrel.training.conference.spi.ConferenceApi.getConference",
+      "request" : {
+        "parameters" : {
+          "websafeConferenceKey" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "conference.updateConference" : {
+      "path" : "conference/{websafeConferenceKey}",
+      "httpMethod" : "PUT",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/plus.login" ],
+      "audiences" : [ "452065867342-93qlftq8a65dcmp48hrsuo7un6btddvf.apps.googleusercontent.com" ],
+      "clientIds" : [ "452065867342-93qlftq8a65dcmp48hrsuo7un6btddvf.apps.googleusercontent.com", "replace this with your Android client ID", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.google.devrel.training.conference.spi.ConferenceApi.updateConference",
+      "request" : {
+        "parameters" : {
+          "websafeConferenceKey" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "ConferenceQueryForm" : {
+        "id" : "ConferenceQueryForm",
+        "type" : "object",
+        "properties" : {
+          "filters" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Filter"
+            }
+          }
+        }
+      },
+      "Filter" : {
+        "id" : "Filter",
+        "type" : "object",
+        "properties" : {
+          "field" : {
+            "$ref" : "Field"
+          },
+          "operator" : {
+            "$ref" : "Operator"
+          },
+          "value" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Field" : {
+        "id" : "Field",
+        "type" : "string",
+        "enum" : [ "CITY", "TOPIC", "MONTH", "MAX_ATTENDEES" ]
+      },
+      "Operator" : {
+        "id" : "Operator",
+        "type" : "string",
+        "enum" : [ "EQ", "LT", "GT", "LTEQ", "GTEQ", "NE" ]
+      },
+      "Conference" : {
+        "id" : "Conference",
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "description" : {
+            "type" : "string"
+          },
+          "topics" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "city" : {
+            "type" : "string"
+          },
+          "startDate" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "endDate" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "month" : {
+            "type" : "integer"
+          },
+          "maxAttendees" : {
+            "type" : "integer"
+          },
+          "seatsAvailable" : {
+            "type" : "integer"
+          },
+          "websafeKey" : {
+            "type" : "string"
+          },
+          "organizerDisplayName" : {
+            "type" : "string"
+          }
+        }
+      },
+      "ConferenceCollection" : {
+        "id" : "ConferenceCollection",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "Conference"
+            }
+          }
+        }
+      },
+      "ConferenceForm" : {
+        "id" : "ConferenceForm",
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "description" : {
+            "type" : "string"
+          },
+          "topics" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "city" : {
+            "type" : "string"
+          },
+          "startDate" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "endDate" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "maxAttendees" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "WrappedBoolean" : {
+        "id" : "WrappedBoolean",
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "boolean"
+          }
+        }
+      },
+      "Announcement" : {
+        "id" : "Announcement",
+        "type" : "object",
+        "properties" : {
+          "message" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Profile" : {
+        "id" : "Profile",
+        "type" : "object",
+        "properties" : {
+          "userId" : {
+            "type" : "string"
+          },
+          "displayName" : {
+            "type" : "string"
+          },
+          "mainEmail" : {
+            "type" : "string"
+          },
+          "teeShirtSize" : {
+            "$ref" : "TeeShirtSize"
+          },
+          "conferenceKeysToAttend" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "TeeShirtSize" : {
+        "id" : "TeeShirtSize",
+        "type" : "string",
+        "enum" : [ "NOT_SPECIFIED", "XS", "S", "M", "L", "XL", "XXL", "XXXL" ]
+      },
+      "ProfileForm" : {
+        "id" : "ProfileForm",
+        "type" : "object",
+        "properties" : {
+          "displayName" : {
+            "type" : "string"
+          },
+          "teeShirtSize" : {
+            "$ref" : "TeeShirtSize"
+          }
+        }
+      }
+    },
+    "methods" : {
+      "com.google.devrel.training.conference.spi.ConferenceApi.queryConferences" : {
+        "request" : {
+          "$ref" : "ConferenceQueryForm"
+        },
+        "response" : {
+          "$ref" : "ConferenceCollection"
+        }
+      },
+      "com.google.devrel.training.conference.spi.ConferenceApi.createConference" : {
+        "request" : {
+          "$ref" : "ConferenceForm"
+        },
+        "response" : {
+          "$ref" : "Conference"
+        }
+      },
+      "com.google.devrel.training.conference.spi.ConferenceApi.unregisterFromConference" : {
+        "response" : {
+          "$ref" : "WrappedBoolean"
+        }
+      },
+      "com.google.devrel.training.conference.spi.ConferenceApi.getAnnouncement" : {
+        "response" : {
+          "$ref" : "Announcement"
+        }
+      },
+      "com.google.devrel.training.conference.spi.ConferenceApi.getConferencesCreated" : {
+        "response" : {
+          "$ref" : "ConferenceCollection"
+        }
+      },
+      "com.google.devrel.training.conference.spi.ConferenceApi.registerForConference" : {
+        "response" : {
+          "$ref" : "WrappedBoolean"
+        }
+      },
+      "com.google.devrel.training.conference.spi.ConferenceApi.getProfile" : {
+        "response" : {
+          "$ref" : "Profile"
+        }
+      },
+      "com.google.devrel.training.conference.spi.ConferenceApi.saveProfile" : {
+        "request" : {
+          "$ref" : "ProfileForm"
+        },
+        "response" : {
+          "$ref" : "Profile"
+        }
+      },
+      "com.google.devrel.training.conference.spi.ConferenceApi.getConferencesToAttend" : {
+        "response" : {
+          "$ref" : "ConferenceCollection"
+        }
+      },
+      "com.google.devrel.training.conference.spi.ConferenceApi.getConference" : {
+        "response" : {
+          "$ref" : "Conference"
+        }
+      },
+      "com.google.devrel.training.conference.spi.ConferenceApi.updateConference" : {
+        "request" : {
+          "$ref" : "ConferenceForm"
+        },
+        "response" : {
+          "$ref" : "Conference"
+        }
+      }
+    }
+  }
+}
